@@ -44,6 +44,7 @@ function myVerify(accessToken, refreshToken, profile, done) {
 // Use the TequilaStrategy within Passport.
 var tequila = new TequilaStrategy({
     service: "Demo Tequila App in node.js",
+    request: ["displayname"],
 }, myVerify);
 passport.use(tequila);
 
