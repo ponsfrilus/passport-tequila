@@ -64,19 +64,20 @@ app.configure(function() {
 app.get('/', function(req, res){
     res.render('index', { user: req.user });
 });
-app.get('/account', ensureAuthenticated, function(req, res){
-    res.render('account', { user: req.user });
+app.get('/private', ensureAuthenticated, function(req, res){
+    res.render('private', { user: req.user });
 });
-app.get('/login', function(req, res){
-    res.render('login', { user: req.user });
-});
-app.listen(process.env.PORT || 3000);
+
 // Simple route middleware to ensure user is authenticated.
-// Use this route middleware on any resource that needs to be protected. If
-// the request is authenticated (typically via a persistent login session),
-// the request will proceed. Otherwise, the user will be redirected to the
-// login page.
+// Use this route middleware on any resource that needs to be protected (see
+// example above). If the request is authenticated (typically via a persistent
+// login session), the request will proceed. Otherwise, the user will be
+// redirected to Tequila.
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
-    res.redirect('/login')
+    console.log("Not authenticated at " + req.url);
+    res.redirect('/');   // TODO: not the Right Thing
 }
+
+app.listen(process.env.PORT || 3000);
+console.log('Demo server listening on port ' + app.address().port);
