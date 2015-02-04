@@ -1,8 +1,11 @@
 {
   "name": "passport-tequila",
-  "version": "0.1",
+  "version": "0.0.1",
   "private": false,
   "scripts": {
     "start": "node ./examples/plain-node"
+  },
+  "dependencies": {
+    "debug": "^2.1.1"
   }
 }

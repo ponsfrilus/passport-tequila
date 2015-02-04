@@ -42,7 +42,10 @@ function myVerify(accessToken, refreshToken, profile, done) {
 }
 
 // Use the TequilaStrategy within Passport.
-passport.use(new TequilaStrategy({}, myVerify));
+var tequila = new TequilaStrategy({
+    service: "Demo Tequila App in node.js",
+}, myVerify);
+passport.use(tequila);
 
 var app = express.createServer();
 // configure Express
@@ -64,20 +67,11 @@ app.configure(function() {
 app.get('/', function(req, res){
     res.render('index', { user: req.user });
 });
-app.get('/private', ensureAuthenticated, function(req, res){
+
+// This is how you Tequila-protect a page:
+app.get('/private', tequila.ensureAuthenticated, function(req, res){
     res.render('private', { user: req.user });
 });
-
-// Simple route middleware to ensure user is authenticated.
-// Use this route middleware on any resource that needs to be protected (see
-// example above). If the request is authenticated (typically via a persistent
-// login session), the request will proceed. Otherwise, the user will be
-// redirected to Tequila.
-function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) { return next(); }
-    console.log("Not authenticated at " + req.url);
-    res.redirect('/');   // TODO: not the Right Thing
-}
 
 app.listen(process.env.PORT || 3000);
 console.log('Demo server listening on port ' + app.address().port);
