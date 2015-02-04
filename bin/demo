@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var http = require('http');
+
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/html"});
+  response.end("<html><body><p>Demo Tequila request\n</p></body></html>");
+});
+
+server.listen(process.env.PORT || 3000);
+
+console.log('Demo server listening on port ' + server.address().port);
