@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var http = require('http');
-var tequila = require('../index.js');  // Would be: require("passport-tequila") in your app
+var tequila = require('passport-tequila');
 
 var tequilaJar = new tequila.plain();
 
