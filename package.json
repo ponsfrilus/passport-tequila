@@ -1,0 +1,8 @@
+{
+  "name": "tequila.js",
+  "version": "0.1",
+  "private": false,
+  "scripts": {
+    "start": "node ./bin/www"
+  }
+}
