@@ -45,7 +45,7 @@ function myVerify(accessToken, refreshToken, profile, done) {
 var tequila = new TequilaStrategy({
     service: "Demo Tequila App in node.js",
     request: ["displayname"],
-    require: "group=openstack-sti",
+    // require: "group=openstack-sti",  // Uncomment and use a group you are a member of.
 }, myVerify);
 passport.use(tequila);
 
