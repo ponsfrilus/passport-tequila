@@ -1,8 +1,8 @@
 {
-  "name": "tequila.js",
+  "name": "passport-tequila",
   "version": "0.1",
   "private": false,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./examples/plain-node"
   }
 }

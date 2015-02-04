@@ -6,13 +6,13 @@
 
 var os=require("os");
 
+var tequila = module.exports = {};
+
 /**
  * @constructor
  */
-var Tequila = module.exports = function() {};
-
-Tequila.prototype.server = function () {
+tequila.plain = function () {
     var hostname_bits = os.hostname().split(".");
     hostname_bits[0] = "tequila";
-    return hostname_bits.join(".");
-}();
+    this.server = hostname_bits.join(".");
+};
