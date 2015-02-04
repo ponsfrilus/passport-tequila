@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 
 var http = require('http');
+var tequila = require('../index.js');  // Would be: require("tequilajs") in your app
 
 var server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/html"});
-  response.end("<html><body><p>Demo Tequila request\n</p></body></html>");
+  response.end("<html><body><p>" +
+    "Demo Tequila request\n</p>" +
+    "<p>Server is at: " + new tequila().server + "</p>" +
+    "</body></html>");
 });
 
 server.listen(process.env.PORT || 3000);
