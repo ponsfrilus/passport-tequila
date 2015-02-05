@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "start": "node ./examples/plain-node"
+    "start": "node ./examples/express-passport/app.js"
   },
   "dependencies": {
     "debug": "^2.1.1",
