@@ -1,0 +1,8 @@
+# Like .gitignore:
+.DS_store
+.idea
+npm-debug.log
+
+# And also:
+.npmignore
+examples

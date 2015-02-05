@@ -8,5 +8,24 @@
   "dependencies": {
     "debug": "^2.1.1",
     "passport": "^0.2.1"
-  }
+  },
+  "main": "./lib/passport-tequila",
+  "author": {
+    "name": "Dominique Quatravaux",
+    "email": "dominique@quatravaux.org",
+    "url": "http://people.epfl.ch/dominique.quatravaux"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/epfl-sti/passport-tequila.git"
+  },
+  "bugs": {
+    "url": "http://github.com/epfl-sti/passport-tequila/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
 }
