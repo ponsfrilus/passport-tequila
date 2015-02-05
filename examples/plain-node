@@ -3,6 +3,7 @@
 var http = require('http');
 var tequila = require('passport-tequila');
 
+// FIXME WORK IN PROGRESS - This doesn't actually work.
 var tequilaJar = new tequila.plain();
 
 var server = http.createServer(function (request, response) {
