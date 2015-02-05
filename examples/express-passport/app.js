@@ -81,5 +81,8 @@ app.get('/logout', function(req, res){
     res.redirect('/');
 });
 
+// Alternatively, we can also log out from Tequila altogether.
+app.get('/globallogout', tequila.globalLogout("/"));
+
 app.listen(process.env.PORT || 3000);
 console.log('Demo server listening on port ' + app.address().port);
