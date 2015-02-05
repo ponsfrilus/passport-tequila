@@ -75,5 +75,11 @@ app.get('/private', tequila.ensureAuthenticated, function(req, res){
     res.render('private', { user: req.user });
 });
 
+// To log out, just drop the session cookie.
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+});
+
 app.listen(process.env.PORT || 3000);
 console.log('Demo server listening on port ' + app.address().port);
